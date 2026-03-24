@@ -2,17 +2,17 @@ import { useState, useEffect } from 'react';
 
 const Countdown = () => {
   const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
+    'Ngày': 0,
+    'Giờ': 0,
+    'Phút': 0,
+    'Giây': 0
   });
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const weddingDate = new Date('2025-08-30T00:00:00');
+      const graduationDate = new Date('2026-04-05T16:30:00');
       const now = new Date();
-      const difference = weddingDate - now;
+      const difference = graduationDate - now;
 
       if (difference > 0) {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -20,7 +20,7 @@ const Countdown = () => {
         const minutes = Math.floor((difference / 1000 / 60) % 60);
         const seconds = Math.floor((difference / 1000) % 60);
 
-        setTimeLeft({ days, hours, minutes, seconds });
+        setTimeLeft({ 'Ngày': days, 'Giờ': hours, 'Phút': minutes, 'Giây': seconds });
       }
     };
 
@@ -31,15 +31,17 @@ const Countdown = () => {
   }, []);
 
   return (
-    <section className="py-16 px-4 bg-rose-600 text-white">
+    // Nền hồng pastel (bg-pink-50) và chữ màu tối để dễ đọc
+    <section className="py-16 px-4 bg-pink-50 text-slate-800">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="font-great-vibes text-4xl mb-8">Menuju Hari Bahagia</h2>
+        <h2 className="font-great-vibes text-5xl mb-12 text-pink-600">Đếm Ngược Đến Buổi Lễ</h2>
         
-        <div className="flex justify-center gap-4 md:gap-6">
+        <div className="flex justify-center gap-3 md:gap-6">
           {Object.entries(timeLeft).map(([unit, value]) => (
-            <div key={unit} className="bg-white bg-opacity-20 rounded-lg p-4 w-20 md:w-24 backdrop-blur-sm">
-              <div className="text-3xl md:text-4xl font-bold">{value}</div>
-              <div className="text-sm uppercase">{unit}</div>
+            // Hộp trắng mờ, bo góc tròn trịa và có viền hồng nhạt
+            <div key={unit} className="bg-white/80 rounded-2xl p-4 w-20 md:w-28 backdrop-blur-md shadow-sm border border-pink-100">
+              <div className="text-4xl md:text-5xl font-bold text-pink-500 mb-1">{value}</div>
+              <div className="text-xs md:text-sm uppercase font-semibold text-slate-500">{unit}</div>
             </div>
           ))}
         </div>

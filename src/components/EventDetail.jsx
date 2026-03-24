@@ -1,60 +1,76 @@
-import { FaClock, FaMapMarkerAlt, FaCalendarAlt } from 'react-icons/fa';
+import { FaClock, FaMapMarkerAlt, FaCalendarAlt, FaGraduationCap } from 'react-icons/fa';
 
 const EventDetail = () => {
   const events = [
     {
-      title: "Akad Nikah",
-      date: "Sabtu, 30 Agustus 2025",
-      time: "08:00 - 10:00 WITA",
-      location: "Kediaman Mempelai Wanita, Ubud, Bali"
-    },
-    {
-      title: "Resepsi",
-      date: "Sabtu, 30 Agustus 2025",
-      time: "11:00 - 15:00 WITA",
-      location: "Gedung Serba Guna, Ubud, Bali"
+      title: "Graduation Ceremony",
+      date: "Chủ Nhật, 05 tháng 04, 2026", // Đã tra lịch, ngày này là Chủ Nhật
+      time: "16:30",
+      location: "Đại học Kinh tế TP.HCM (UEH) - Cơ sở A",
+      address: "59C Nguyễn Đình Chiểu, Phường 6, Quận 3, TP.HCM",
+      mapLink: "https://maps.app.goo.gl/PzB6JkHqM9Z8F3nU8" // Link thật của UEH
     }
   ];
 
   return (
-    <section className="py-16 px-4 bg-rose-50">
+    <section className="py-16 px-4 bg-slate-50">
       <div className="max-w-4xl mx-auto">
-        <h2 className="font-great-vibes text-4xl text-center text-rose-600 mb-12">Detail Acara</h2>
+        <h2 className="font-great-vibes text-5xl text-center text-slate-800 mb-12">
+          Thông Tin Buổi Lễ
+        </h2>
         
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* Đổi sang flex căn giữa vì chỉ có 1 event */}
+        <div className="flex justify-center">
           {events.map((event, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold text-rose-600 mb-4">{event.title}</h3>
+            <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow w-full max-w-md border-t-4 border-slate-800">
               
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <FaCalendarAlt className="text-rose-400 mt-1 flex-shrink-0" />
-                  <p>{event.date}</p>
+              <div className="flex justify-center mb-4">
+                <FaGraduationCap className="text-5xl text-slate-700" />
+              </div>
+              
+              <h3 className="text-2xl font-bold text-center text-slate-800 mb-6">
+                {event.title}
+              </h3>
+              
+              <div className="space-y-4 text-slate-600">
+                <div className="flex items-center gap-4">
+                  <FaCalendarAlt className="text-xl text-slate-400 flex-shrink-0" />
+                  <p className="font-medium text-lg">{event.date}</p>
                 </div>
                 
-                <div className="flex items-start gap-3">
-                  <FaClock className="text-rose-400 mt-1 flex-shrink-0" />
-                  <p>{event.time}</p>
+                <div className="flex items-center gap-4">
+                  <FaClock className="text-xl text-slate-400 flex-shrink-0" />
+                  <p className="font-medium text-lg">{event.time}</p>
                 </div>
                 
-                <div className="flex items-start gap-3">
-                  <FaMapMarkerAlt className="text-rose-400 mt-1 flex-shrink-0" />
-                  <p>{event.location}</p>
+                <div className="flex items-start gap-4">
+                  <FaMapMarkerAlt className="text-xl text-slate-400 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-bold text-slate-800">{event.location}</p>
+                    <p className="text-sm mt-1">{event.address}</p>
+                  </div>
                 </div>
               </div>
               
-              <button className="mt-6 px-4 py-2 bg-rose-600 text-white rounded-full hover:bg-rose-700 transition-all flex items-center gap-2 mx-auto">
-                <FaMapMarkerAlt /> Lihat Lokasi
-              </button>
+              {/* Nút bấm mở Google Maps trên tab mới */}
+              <a 
+                href={event.mapLink}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 px-6 py-3 bg-slate-800 text-white rounded-full hover:bg-slate-700 transition-all flex items-center justify-center gap-2 mx-auto w-fit font-medium"
+              >
+                <FaMapMarkerAlt /> Xem Bản Đồ
+              </a>
             </div>
           ))}
         </div>
         
-        <div className="mt-12 bg-white p-6 rounded-lg shadow-md">
-          <div className="h-64 w-full bg-gray-200 rounded-lg overflow-hidden">
+        {/* Khung Google Maps nhúng trực tiếp */}
+        <div className="mt-12 bg-white p-3 rounded-2xl shadow-md">
+          <div className="h-80 w-full bg-gray-200 rounded-xl overflow-hidden">
             <iframe 
-            title="Lokasi Pernikahan"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.028920711012!2d115.25972231533865!3d-8.733752393758266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd246bc8b3b08a5%3A0x4c1e3b0d5b9d5b1f!2sUbud%2C%20Gianyar%2C%20Bali!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid" 
+              title="Bản đồ UEH Cơ sở A"
+              src="https://maps.google.com/maps?q=UEH%20C%C6%A1%20s%E1%BB%9F%20A%2059c%20nguy%E1%BB%85n%20%C4%91%C3%ACnh%20chi%E1%BB%83u&t=&z=16&ie=UTF8&iwloc=&output=embed" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
