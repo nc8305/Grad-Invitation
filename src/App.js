@@ -1,144 +1,117 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useState, useEffect} from 'react';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
-
-import Countdown from './components/Countdown';
-import EventDetail from './components/EventDetail';
+import StarsBackground from './components/StarsBackground';
 import GraduateProfile from './components/GraduateProfile';
+import EventDetail from './components/EventDetail';
 import MusicPlayer from './components/MusicPlayer';
-const StarsBackground = () => {
-  const stars = useMemo(() => {
-    return [...Array(100)].map((_, i) => {
-      // 50% sao 4 cánh lớn, 50% chấm tròn
-      const isSparkle = Math.random() > 0.5;
-      
-      return {
-        id: i,
-        type: isSparkle ? 'star-sparkle' : 'star-circle',
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        // Kích thước bling bling cực lớn: Sao 4 cánh (25px-45px), chấm tròn (4px-7px)
-        size: isSparkle ? `${Math.random() * 20 + 25}px` : `${Math.random() * 3 + 4}px`,
-        delay: `${Math.random() * 5}s`,
-        duration: `${Math.random() * 3 + 2}s`
-      };
-    });
-  }, []);
+import balloonsImg from './assets/images/balloons.png';
+import tulipImg from './assets/images/tulip.png';
+import twinkleImg from './assets/images/twinkle.png';
 
-  return (
-    // SỬ DỤNG MÃ MÀU #fb6f92 CỦA BẠN Ở ĐÂY
-    // Mình phối graixeddient từ #fb6f92 xuống #e05479 (đậm hơn 1 tone) để tạo chiều sâu
-    <div className="fixed inset-0 z-[1] pointer-events-none overflow-hidden bg-[#ffb3c6]">
-
-      {stars.map((star) => (
-        <div
-          key={star.id}
-          className={star.type}
-          style={{
-            top: star.top,
-            left: star.left,
-            width: star.size,
-            height: star.size,
-            animationDelay: star.delay,
-            animationDuration: star.duration,
-          }}
-        />
-      ))}
-    </div>
-  );
-};
-// Banner được "độ" lại cho lung linh
-const HeroSection = () => (
-  <div 
-    className="h-screen flex flex-col items-center justify-center relative bg-cover bg-center"
-    style={{ backgroundImage: "url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop')" }}
-  >
-    {/* Lớp phủ mờ */}
-    <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px]"></div>
-
-    <div className="relative z-10 text-center p-4 w-full" data-aos="zoom-in">
-      <p className="text-xl md:text-2xl text-slate-500 font-semibold mb-6 tracking-[0.3em] uppercase">
-        Save the Date
-      </p>
-      <h1 className="font-great-vibes text-7xl md:text-9xl text-pink-500 mb-4 drop-shadow-sm">
-        Lễ Tốt Nghiệp
-      </h1>
-      <h2 className="font-great-vibes text-6xl md:text-8xl text-pink-400 mb-8">
-        Trần Nguyễn Uyên Nhi
-      </h2>
-      <p className="text-xl md:text-2xl text-slate-700 font-medium mb-2">
-        Trân trọng kính mời
-      </p>
-      <p className="text-lg md:text-xl text-slate-600">
-        Tân cử nhân - UEH 2026
-      </p>
-      <div className="w-24 h-1 bg-pink-300 mt-10 rounded-full mx-auto"></div>
-    </div>
-  </div>
-);
+// Component Nền sao lấp lánh
 
 function App() {
   const [isOpened, setIsOpened] = useState(false);
+  const [year, setYear] = useState(4); 
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      easing: 'ease-out-cubic',
-    });
-  }, []);
+  useEffect(() => { AOS.init({ duration: 1000 }); }, []);
+  
 
+  // --- MÀN HÌNH CHỜ (INTRO) ---
   if (!isOpened) {
     return (
-      <div className="h-screen flex flex-col items-center justify-center bg-pink-100 relative overflow-hidden">
-        {/* Vẫn có bầu trời sao ở màn hình chào */}
-        <StarsBackground /> 
+      <div className="h-screen flex flex-col items-center justify-center bg-pink-100 relative overflow-hidden z-10 text-center px-4">
         
-        <div className="absolute inset-4 border-2 border-pink-200/50 rounded-2xl"></div>
-        <div className="z-10 text-center" data-aos="fade-up">
-          <h2 className="font-great-vibes text-9xl text-pink-700 mb-8 drop-shadow-sm">Graduate Invitation</h2>
-          <p className="text-slate-600 text-xl mb-10 z-10 uppercase tracking-widest font-medium">Bạn có một lời mời từ Uyên Nhi</p>
-          <button
-                onClick={() => setIsOpened(true)}
-                className="px-10 py-4 text-3xl bg-pink-600 text-white rounded-full font-bold shadow-[0_0_30px_rgba(236,72,153,0.6)] hover:bg-pink-700 hover:scale-125 transition-all animate-bounce"
-              >
-                 Mở Thiệp
-</button>
-        </div>
+        <StarsBackground />
+        <h2 className="font-great-vibes text-7xl md:text-8xl text-pink-600 mb-10 z-10 drop-shadow-sm text-center px-4">Graduate Invitation</h2>
+        <p className="text-slate-600 text-lg md:text-xl mb-10 z-10 uppercase tracking-widest font-medium text-center">Bạn có một lời mời từ Uyên Nhi</p>
+        <button onClick={() => setIsOpened(true)} className="z-10 px-12 py-5 md:px-16 md:py-6 text-xl md:text-2xl bg-pink-500 text-white rounded-full font-bold shadow-xl hover:bg-pink-600 hover:scale-110 transition-all animate-bounce">
+          Mở Thiệp ✨
+        </button>
+        <MusicPlayer />
       </div>
+
     );
   }
 
+  // --- MÀN HÌNH CHÍNH (KHI ĐÃ MỞ THIỆP) ---
   return (
-    // Bổ sung bg-pink-100 làm nền để sao trắng nổi lên
-    <div className="App font-sans overflow-x-hidden relative   min-h-screen">
+    <div className="relative min-h-screen bg-pink-100 text-slate-700 overflow-hidden z-10">
       
-      {/* 1. Bầu trời sao lấp lánh nằm cố định ở Background */}
+      {/* 1. Nền sao & Máy phát nhạc */}
       <StarsBackground />
-      
-      {/* 2. Trình phát nhạc */}
       <MusicPlayer />
-      
-      {/* 3. Nội dung thiệp */}
-      <div className="invitation-content relative z-10">
-        <HeroSection />
 
-        <div data-aos="fade-up" data-aos-delay="200" className="bg-white/95 rounded-2xl my-6 mx-4 p-2 shadow-sm">
-          <Countdown />
+      {/* 2. KHỐI ĐỒ DECOR */}
+      <div className="fixed inset-0 pointer-events-auto z-20">
+        {/* Chùm bóng góc trên TRÁI */}
+        <div className="absolute top-0 left-0 w-32 md:w-56 animate-sway-left opacity-90 transform origin-top-left -translate-y-5 -translate-x-5">
+          <img src={balloonsImg} alt="Balloons Left" className="w-full h-auto drop-shadow-xl" />
+        </div>
+        
+        {/* Chùm bóng góc trên PHẢI */}
+        <div className="absolute top-0 right-0 w-32 md:w-56 animate-sway-right opacity-90 transform origin-top-right -translate-y-5 translate-x-5">
+          <img src={balloonsImg} alt="Balloons Right" className="w-full h-auto drop-shadow-xl" />
         </div>
 
-        <div data-aos="fade-up" className="bg-white/95 rounded-2xl my-6 mx-4 p-2 shadow-sm">
-          <GraduateProfile />
+        {/* Hoa Tulip góc dưới TRÁI */}
+        <div className="absolute -bottom-5 -left-5 md:left-5 w-40 md:w-56 animate-float-slow opacity-90">
+          <img src={tulipImg} alt="Pink Tulip" className="w-full h-auto drop-shadow-lg" />
         </div>
 
-        <div data-aos="fade-up" className="bg-white/95 rounded-2xl my-6 mx-4 p-2 shadow-sm">
-          <EventDetail />
+        {/* Twinkle góc dưới PHẢI */}
+        <div className="absolute bottom-10 right-2 md:right-10 w-32 md:w-48 animate-float-delayed">
+          <img src={twinkleImg} alt="Twinkle Popmart" className="w-full h-auto drop-shadow-2xl" />
         </div>
       </div>
 
-      <footer className="py-8 text-center bg-white text-slate-400 text-sm border-t border-pink-100 relative z-10">
-        <p>Thư mời tốt nghiệp của Uyên Nhi - 2026</p>
-      </footer>
+
+      {/* 3. CÁC CHƯƠNG NỘI DUNG */}
+      <div className="relative z-30 pt-10">
+        
+        {/* Chương 1 */}
+        <section className="min-h-screen flex flex-col items-center justify-center p-4 text-center px-4" data-aos="fade-up">
+          <h1 className="font-great-vibes text-[80px] md:text-[120px] text-pink-600 mb-4 drop-shadow-sm leading-tight text-glow-pink">Trần Nguyễn Uyên Nhi</h1>
+          <p className="text-xl md:text-2xl font-medium tracking-[0.3em] uppercase text-pink-400">Chương 1: Awaken</p>
+          <p className="max-w-2xl mt-6 text-base md:text-lg text-slate-600 px-4">Mọi hành trình đều bắt đầu từ một giấc mơ. Uyên Nhi đã bắt đầu chặng đường Ngoại thương của mình bằng sự tò mò và khát vọng vươn ra biển lớn.</p>
+        </section>
+
+        {/* Chương 2: Profile */}
+        <section className="py-20 relative px-4" data-aos="zoom-in">
+          <GraduateProfile />
+        </section>
+
+        {/* Chương 3: Explore */}
+        <section className="py-20 px-6 text-center" data-aos="fade-right">
+          <h2 className="font-great-vibes text-5xl md:text-6xl mb-10 text-pink-500 drop-shadow-sm text-center">Chương 3: Explore</h2>
+          <div className="max-w-xl mx-auto bg-white/60 backdrop-blur-lg p-8 md:p-10 rounded-3xl border border-white shadow-sm">
+            <p className="text-lg md:text-xl mb-6 font-bold uppercase text-pink-600">Năm thứ {year}: {year === 4 ? "Bứt phá" : "Khám phá"}</p>
+            <input type="range" min="1" max="4" value={year} onChange={(e) => setYear(parseInt(e.target.value))} className="w-full h-2 bg-pink-200 rounded-lg appearance-none cursor-pointer accent-pink-500 mb-6" />
+            <p className="italic text-slate-600 text-sm md:text-base">"Từ những kiến thức Quản trị Hải quan đến tấm bằng Xuất sắc danh giá..."</p>
+          </div>
+        </section>
+
+        {/* Chương 4: Event */}
+        <section className="py-10" data-aos="fade-up">
+          <EventDetail />
+        </section>
+
+        {/* Lời kết */}
+        <section className="py-24 md:py-32 text-center px-4" data-aos="zoom-out">
+          <h2 className="font-great-vibes text-6xl md:text-8xl mb-6 text-pink-600 drop-shadow-sm text-center">Among The Stars</h2>
+          <p className="text-lg md:text-xl px-4 max-w-2xl mx-auto text-slate-600">Tấm bằng Xuất sắc này là điểm kết thúc của một hành trình và là khởi đầu cho vô vàn phi vụ mới giữa các vì sao.</p>
+          <button className="mt-10 px-8 py-4 md:px-10 bg-pink-500 text-white rounded-full hover:bg-pink-600 hover:scale-105 transition-all font-bold shadow-lg">
+            GỬI LỜI CHÚC MỪNG 🎓
+          </button>
+        </section>
+
+        {/* Footer */}
+        <footer className="py-10 border-t border-pink-200 text-center text-slate-400 text-xs tracking-[0.2em] uppercase bg-white/30 pb-20 md:pb-10 px-4">
+          <p>© 2026 Graduation Ceremony</p>
+          <p className="font-great-vibes text-xl md:text-2xl mt-2 text-pink-400 lowercase capitalize">Designed with Celestial Light</p>
+        </footer>
+      </div>
+
     </div>
   );
 }
