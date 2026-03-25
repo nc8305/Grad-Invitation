@@ -5,13 +5,13 @@ const StarsBackground = () => {
 
   // ⭐ Stars
   const stars = useMemo(() => {
-    return [...Array(150)].map((_, i) => {
+    return [...Array(80)].map((_, i) => {
       const isSparkle = Math.random() > 0.4;
 
       const rand = Math.random();
       let color =
-        rand < 0.75 ? 'white' :
-        rand < 0.95 ? 'silver' :
+        rand < 0.65 ? 'white' :
+        rand < 0.85 ? 'white' :
         'gold';
 
       return {
@@ -21,8 +21,8 @@ const StarsBackground = () => {
         top: `${Math.random() * 100}%`,
         left: `${Math.random() * 100}%`,
         size: isSparkle
-          ? `${Math.random() * 8 + 10}px`
-          : `${Math.random() * 3 + 2}px`,
+          ? `${Math.random() * 25 + 20 }px`
+          : `${Math.random() * 8 + 6}px`,
         delay: `${Math.random() * 5}s`,
         duration: `${Math.random() * 3 + 2}s`
       };
@@ -64,6 +64,12 @@ const StarsBackground = () => {
         <div
           key={star.id}
           className={star.type}
+          // --- THÊM DÒNG NÀY ---
+          // Khi animation chạy hết 1 vòng (chớp xong), tự động đổi vị trí mới
+          onAnimationIteration={(e) => {
+            e.target.style.top = `${Math.random() * 100}%`;
+            e.target.style.left = `${Math.random() * 100}%`;
+          }}
           style={{
             top: star.top,
             left: star.left,
@@ -94,6 +100,12 @@ const StarsBackground = () => {
         <div
           key={s.id}
           className="shooting-star"
+          // --- THÊM DÒNG NÀY ---
+          // Sao băng bay xong đổi vị trí xuất phát luôn
+          onAnimationIteration={(e) => {
+            e.target.style.top = `${Math.random() * 50}%`;
+            e.target.style.left = `${Math.random() * 100}%`;
+          }}
           style={{
             top: s.top,
             left: s.left,

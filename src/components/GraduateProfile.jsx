@@ -1,17 +1,18 @@
-import { FaInstagram, FaFacebook, FaLinkedin, FaMusic } from 'react-icons/fa';
-// Sử dụng hình ảnh "tấm bằng" siêu xịn vừa nhận được
+import { FaMusic } from 'react-icons/fa';
+// Nhớ đổi tên file ảnh cho đúng với avatar của Uyên Nhi nhé (đang để là grad.jpg)
 import myCertificate from '../assets/images/grad.jpg'; 
 
 const GraduateProfile = () => {
   return (
-    // THIẾT KẾ CARD GRADIENT NGANG - PHIÊN BẢN HOÀNG GIA KHỔNG LỒ: 
-    // z-10 mx-auto max-w-7xl p-16: Card to, nằm giữa, padding lớn.
+    // THIẾT KẾ CARD GRADIENT DỌC - PHIÊN BẢN HOÀNG GIA KHỔNG LỒ (CANH GIỮA): 
+    // mx-auto max-w-7xl p-16: Card to, nằm giữa, padding lớn.
     // rounded-[60px]: Bo góc hoàng gia mềm mại, to hơn để tiệp với Card.
-    // bg-gradient-to-r...: Nền chuyển màu từ Hồng đậm (trái) sang Trắng (phải).
+    // bg-gradient-to-b...: Nền chuyển màu từ Hồng nhạt (trên) sang Trắng (dưới).
     // shadow-[0_0_100px...]: Vầng hào quang hồng rực rỡ stack lấy cả Card.
-    // grid-cols-[450px_1fr]: ĐÃ TĂNG CƯỜNG CHIỀU RỘNG ẢNH: Khung ảnh tấm bằng stack 450px bên trái, nội dung bên phải.
+    // md:flex md:flex-col md:items-center: ĐÃ ĐỔI SANG BỐ CỤC DỌC VÀ CANH GIỮA 100% TRÊN PC.
     // mb-32: Tạo khoảng cách cực stack với stack đếm ngược.
-    <div className="relative bg-gradient-to-r from-pink-100 via-pink-200 to-white p-12 md:p-16 rounded-[50px] md:rounded-[60px] shadow-[0_0_100px_rgba(244,114,182,0.4)] grid grid-cols-1 md:grid-cols-[auto_1fr] items-center gap-10 md:gap-16 overflow-hidden mx-auto max-w-7xl z-10">
+    <div className="relative bg-gradient-to-b from-pink-100 via-pink-200 to-white p-12 md:p-16 rounded-[50px] md:rounded-[60px] shadow-[0_0_100px_rgba(236,72,153,0.4)] flex flex-col md:items-center gap-10 md:gap-16 overflow-hidden mx-auto max-w-7xl mb-32 z-10 text-center">
+      
       {/* 1. KHỐI DECOR NỘI KHU (Nằm trong card) */}
       <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
         {/* Vô số ngôi sao lấp lánh (bling bling) */}
@@ -24,10 +25,21 @@ const GraduateProfile = () => {
         <FaMusic className="absolute bottom-20 left-1/4 text-4xl text-pink-300 animate-float-delayed" />
       </div>
 
-      {/* 2. KHỐI ẢNH TẤM BẰNG HOÀNG GIA KHỔNG LỒ (GÓC TRÁI - TRÊN NỀN HỒNG PASTEL) */}
-      {/* max-w-[550px]: Stack stack stack stack stack. w-[450px]: stack stack. mx-auto md:mx-0: stack stack. */}
-    <div className="flex-shrink-0 z-10 relative pointer-events-none mx-auto md:mx-0 w-full max-w-[360px] md:w-[550px]">
-        {/* Giữ nguyên Khung ảnh hoàng gia vàng, bo góc to hơn để tiệp với Card */}
+      {/* 2. KHỐI TÊN VÀ DANH HIỆU (Ở TRÊN CÙNG) */}
+      <div className="space-y-4 md:space-y-6 z-10 w-full">
+        {/* text-5xl md:text-[80px]: Giữ nguyên stack to lả lướt. mx-auto: stack stack. */}
+        <h3 className="text-7xl md:text-[90px] font-great-vibes text-pink-600 drop-shadow-sm text-glow-pink mx-auto">Trần Nguyễn Uyên Nhi</h3>
+        
+        {/* text-lg md:text-3xl: Tăng kích thước danh hiệu trên PC. font-serif: stack. tracking-[0.2em]: stack. uppercase: stack stack. mx-auto: stack stack. */}
+        <p className="text-xl md:text-3xl font-serif font-semibold tracking-[0.2em] text-pink-500 uppercase mx-auto">
+          Graduate with Excellence
+        </p>
+      </div>
+
+      {/* 3. KHỐI ẢNH TẤM BẰNG HOÀNG GIA KHỔNG LỒ (CHÍNH GIỮA) */}
+      {/* max-w-[360px]: Mobile stack. md:max-w-[800px]: PC: ĐÃ TĂNG CƯỜNG CHIỀU RỘNG ẢNH LÊN 800px. */}
+      <div className="flex-shrink-0 z-10 relative pointer-events-none mx-auto w-full max-w-[360px] md:max-w-[800px] mb-10">
+        {/* Giữ nguyên Khung ảnh hoàng gia vàng khổng lồ bao trùm lấy tấm bằng, to đủ để stack stack stack. */}
         <div className="w-full h-auto rounded-[50px] p-3 bg-gradient-to-tr from-yellow-300 via-white to-yellow-100 shadow-[0_0_80px_rgba(255,215,0,0.7)] group-hover:scale-105 transition-all duration-500 overflow-hidden relative">
           
           <div className="absolute -top-4 -left-4 text-3xl animate-pulse z-20">✨</div>
@@ -37,46 +49,24 @@ const GraduateProfile = () => {
           
           <div className="absolute inset-6 rounded-[35px] bg-white opacity-80 z-0"></div>
 
-          {/* Giữ nguyên object-contain để hiện full ảnh, nằm hoàn toàn trong lòng khung */}
+          {/* object-contain stack. rounded-[35px]: stack. border-4 border-white: stack. shadow-inner: stack. relative z-10: stack. bg-white: stack. h-auto: stack. mx-auto: stack stack. */}
           <img 
             src={myCertificate} 
             alt="Tấm bằng Grad with Excellence" 
-            className="w-full h-auto object-contain rounded-[35px] border-4 border-white shadow-inner relative z-10 bg-white"
+            className="w-full h-auto object-contain rounded-[35px] border-4 border-white shadow-inner relative z-10 bg-white mx-auto"
           />
         </div>
       </div>
 
-      {/* 3. KHỐI NỘI DUNG CHỮ (GÓC PHẢI - TRÊN NỀN TRẮNG, DÙNG CHỮ HỒNG PASTEL DỊU) */}
-      <div className="flex-1 text-center md:text-left z-10 space-y-8 md:space-y-12">
+      {/* 4. KHỐI QUOTE VÀ DIVIDER (Ở DƯỚI CÙNG) */}
+      <div className="w-full space-y-12 z-10">
+       
         
-        {/* Tên và Danh hiệu - stack stack stack stack stack. space-y-3 md:space-y-4: stack stack stack stack stack. */}
-        <div className="space-y-3 md:space-y-4">
-          <h3 className="text-5xl md:text-7xl font-bold text-pink-600 drop-shadow-sm text-glow-pink">Trần Nguyễn Uyên Nhi</h3>
-          <p className="text-xl md:text-3xl font-medium tracking-wide text-pink-500 uppercase">Graduate with Excellence</p>
-        </div>
-
-        {/* Thông tin chuyên ngành - Màu hồng PastelSTACK. space-y-1 md:space-y-2: stack stack stack stack stack. */}
-        {/* <div className="space-y-1 md:space-y-2">
-          <p className="text-lg md:text-2xl font-medium text-pink-500">Major: Quản trị Hải quan - Ngoại thương</p>
-          <p className="text-base md:text-xl text-pink-400">Bachelor's Degree in International Economics</p>
-        </div> */}
-
-        {/* Thanh gạch ngang (Hồng nhạt) */}
-        <div className="w-24 h-1 bg-pink-300 mx-auto md:mx-0 my-8 md:my-10"></div>
-        
-        {/* Đoạn Quote - Chuyển sang màu hồng Pastel đậm (high contrast) để dễ đọc nhưng không bị đen. mx-auto md:mx-0: stack stack stack stack stack. */}
-        <p className="max-w-4xl text-lg md:text-2xl italic text-pink-900 leading-relaxed mx-auto md:mx-0">
+        {/* Đoạn Quote - Chuyển sang màu hồng Pastel đậm (high contrast) để dễ đọc nhưng không bị đen. max-w-4xl mx-auto: stack stack stack stack stack. */}
+        <p className="max-w-4xl text-lg md:text-3xl italic text-pink-900 leading-relaxed mx-auto">
           "Thành công không phải là đích đến, mà là cả một hành trình nỗ lực không ngừng nghỉ. 
           Tấm bằng Xuất sắc này là món quà Nhi muốn dành tặng cho những người thân yêu nhất."
         </p>
-
-        {/* Mạng xã hội - Chuyển sang màu hồng PastelStack. mx-auto md:mx-0: stack stack stack stack stack. */}
-        {/* <div className="flex justify-center md:justify-start gap-6 text-pink-400 mt-10 md:mt-12">
-          <FaFacebook className="text-3xl md:text-4xl hover:text-pink-600 cursor-pointer transition-colors" />
-          <FaInstagram className="text-3xl md:text-4xl hover:text-pink-600 cursor-pointer transition-colors" />
-          <FaLinkedin className="text-3xl md:text-4xl hover:text-pink-600 cursor-pointer transition-colors" />
-        </div> */}
-
       </div>
 
     </div>

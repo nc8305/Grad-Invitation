@@ -54,7 +54,7 @@ function App() {
         /* 3. CHIA KHỐI: MÀN HÌNH CHÍNH */
         <>
           {/* ĐỒ DECOR */}
-          <div className="fixed inset-0 pointer-events-none z-20">
+          {/* <div className="fixed inset-0 pointer-events-none z-20">
             <div className="absolute top-0 left-0 w-32 md:w-56 animate-sway-left opacity-90 transform origin-top-left -translate-y-5 -translate-x-5">
               <img src={balloonsImg} alt="Balloons Left" className="w-full h-auto drop-shadow-xl" />
             </div>
@@ -67,7 +67,7 @@ function App() {
             <div className="absolute bottom-10 right-2 md:right-10 w-32 md:w-48 animate-float-delayed">
               <img src={twinkleImg} alt="Twinkle Popmart" className="w-full h-auto drop-shadow-2xl" />
             </div>
-          </div>
+          </div> */}
 
           {/* CÁC CHƯƠNG NỘI DUNG (Wrap trong container giới hạn chiều rộng và có khoảng cách đều) */}
           <div className="relative z-30 pt-32 px-4 md:px-8 max-w-6xl mx-auto space-y-20">
@@ -75,8 +75,8 @@ function App() {
             {/* HỘP 1: AWAKEN */}
             <section className="bg-white/80 backdrop-blur-md rounded-[40px] shadow-xl p-10 md:p-16 text-center border border-pink-100" data-aos="fade-up">
               <h1 className="font-great-vibes text-[60px] md:text-[100px] text-pink-600 mb-4 drop-shadow-sm leading-tight">Trần Nguyễn Uyên Nhi</h1>
-              <p className="text-xl md:text-2xl font-medium tracking-[0.3em] uppercase text-pink-400">Tân cử nhân</p>
-              <p className="max-w-3xl mx-auto mt-6 text-base md:text-lg text-slate-600">Mọi hành trình đều bắt đầu từ một giấc mơ. Uyên Nhi đã bắt đầu chặng đường của mình bằng sự tò mò và khát vọng vươn ra biển lớn.</p>
+              <p className="text-xl md:text-2xl font-family tracking-[0.3em] uppercase text-pink-400">Tân cử nhân</p>
+              <p className="max-w-2xl mx-auto mt-6 text-base md:text-lg text-slate-600 font-montserrat italic leading-relaxed">Mọi hành trình đều bắt đầu từ một giấc mơ. Uyên Nhi đã bắt đầu chặng đường của mình bằng sự tò mò và khát vọng vươn ra biển lớn.</p>
             </section>
 
             {/* HỘP 2: PROFILE (Đã là card thiết kế ngang) */}
@@ -105,13 +105,13 @@ function App() {
             </div>
 
             {/* HỘP 6: LỜI KẾT */}
-            <section className="bg-white/80 backdrop-blur-md rounded-[40px] shadow-xl p-10 md:p-16 text-center border border-pink-100" data-aos="zoom-out">
+            {/* <section className="bg-white/80 backdrop-blur-md rounded-[40px] shadow-xl p-10 md:p-16 text-center border border-pink-100" data-aos="zoom-out">
               <h2 className="font-great-vibes text-5xl md:text-7xl mb-6 text-pink-600 drop-shadow-sm text-center">Among The Stars</h2>
               <p className="text-lg md:text-xl max-w-2xl mx-auto text-slate-600 mb-10">Tấm bằng Xuất sắc này là điểm kết thúc của một hành trình và là khởi đầu cho vô vàn phi vụ mới giữa các vì sao.</p>
               <button className="px-8 py-4 md:px-10 bg-pink-500 text-white rounded-full hover:bg-pink-600 hover:scale-105 transition-all font-bold shadow-lg">
                 GỬI LỜI CHÚC MỪNG 🎓
               </button>
-            </section>
+            </section> */}
 
           </div>
           

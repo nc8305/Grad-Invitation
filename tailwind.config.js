@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'great-vibes': ['"Great Vibes"', 'cursive'],
+        'montserrat': ['"Montserrat"', 'sans-serif'],  
       },
       colors: {
         'rose': {
