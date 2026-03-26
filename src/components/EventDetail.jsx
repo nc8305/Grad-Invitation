@@ -14,7 +14,6 @@ const EventDetail = () => {
   ];
 
   const parkingSpots = [
-    "Cơ sở A - cổng đường Phạm Ngọc Thạch.",
     "Các quán cà phê xung quanh trường trên đường Phạm Ngọc Thạch (Tiện thể làm ly nước nạp năng lượng trước khi chụp ảnh cũng hợp lý 🧋).",
     "Bãi xe xung quanh Hồ Con Rùa.",
     "Bãi xe Nhà Văn hóa Thanh Niên.",

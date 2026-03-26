@@ -65,7 +65,7 @@ const GraduateProfile = () => {
         {/* Đoạn Quote - Chuyển sang màu hồng Pastel đậm (high contrast) để dễ đọc nhưng không bị đen. max-w-4xl mx-auto: stack stack stack stack stack. */}
         <p className="max-w-4xl text-lg font-montserrat md:text-2xl italic leading-relaxed mx-auto">
           "Thành công không phải là đích đến, mà là cả một hành trình nỗ lực không ngừng nghỉ. 
-          Tấm bằng Xuất sắc này là món quà Nhi muốn dành tặng cho những người thân yêu nhất."
+          Tấm bằng Xuất sắc này là món quà unhii muốn dành tặng cho những người thân yêu nhất."
         </p>
       </div>
 

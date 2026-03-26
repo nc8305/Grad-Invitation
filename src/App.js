@@ -12,7 +12,7 @@ import WishForm from './components/WishForm';
 
 function App() {
   const [isOpened, setIsOpened] = useState(false);
-  const [year, setYear] = useState(4); 
+  const [showWishForm, setShowWishForm] = useState(false);
 
   useEffect(() => { 
     AOS.init({ duration: 1000 }); 
@@ -40,7 +40,7 @@ function App() {
       {!isOpened ? (
         <div className="h-screen flex flex-col items-center justify-center relative z-40 text-center px-4">
           <h2 className="font-great-vibes text-7xl md:text-8xl text-pink-600 mb-10 drop-shadow-sm animate-pulse">Graduate Invitation</h2>
-          <p className="text-slate-600 text-lg md:text-xl mb-10 uppercase tracking-widest font-medium">Bạn có một lời mời từ Uyên Nhi</p>
+          <p className="text-slate-600 text-lg md:text-xl mb-10 uppercase tracking-widest font-medium">Bạn có một lời mời từ UNHII</p>
           <button 
             onClick={handleOpenInvitation} 
             className="px-12 py-5 md:px-16 md:py-6 text-xl md:text-2xl bg-pink-500 text-white rounded-full font-bold shadow-xl hover:bg-pink-600 hover:scale-110 transition-all animate-bounce"
@@ -74,7 +74,7 @@ function App() {
             <section className="bg-white/80 backdrop-blur-md rounded-[40px] shadow-xl p-10 md:p-16 text-center border border-pink-100" data-aos="fade-up">
               <h1 className="font-great-vibes text-[60px] md:text-[100px] text-pink-600 mb-4 drop-shadow-sm leading-tight">Trần Nguyễn Uyên Nhi</h1>
               <p className="text-xl md:text-2xl font-family tracking-[0.3em] uppercase text-pink-400">Tân cử nhân</p>
-              <p className="max-w-2xl mx-auto mt-6 text-base md:text-lg text-slate-600 font-montserrat italic leading-relaxed">Mọi hành trình đều bắt đầu từ một giấc mơ. Uyên Nhi đã bắt đầu chặng đường của mình bằng sự tò mò và khát vọng vươn ra biển lớn.</p>
+              <p className="max-w-2xl mx-auto mt-6 text-base md:text-lg text-slate-600 font-montserrat italic leading-relaxed">Mọi hành trình đều bắt đầu từ một giấc mơ. unhii đã bắt đầu chặng đường của mình bằng sự tò mò và khát vọng vươn ra biển lớn.</p>
             </section>
 
             {/* HỘP 2: PROFILE (Đã là card thiết kế ngang) */}
@@ -103,17 +103,31 @@ function App() {
             </div>
 
             {/* HỘP 6: LỜI KẾT */}
+            {/* HỘP 6: LỜI KẾT */}
             <section className="bg-white/80 backdrop-blur-md rounded-[40px] shadow-xl p-10 md:p-16 text-center border border-pink-100" data-aos="zoom-out">
-              <h2 className="font-great-vibes text-5xl md:text-7xl mb-6 text-pink-600 drop-shadow-sm text-center">Thank you for attending</h2>
-              {/* <p className="text-lg md:text-xl font-time-newroman italic max-w-2xl mx-auto text-slate-600 mb-10">Tấm bằng Xuất sắc này là điểm kết thúc của một hành trình và là khởi đầu cho vô vàn phi vụ mới của Uyên Nhi.</p> */}
-              {/* <button className="px-8 py-4 md:px-10 bg-pink-500 text-white rounded-full hover:bg-pink-600 hover:scale-105 transition-all font-bold shadow-lg">
-                GỬI LỜI CHÚC MỪNG 🎓
-              </button> */}
-             <WishForm/>
+              <h2 className="font-great-vibes text-5xl md:text-7xl mb-6 text-pink-600 drop-shadow-sm text-center">Among the stars</h2>
+              <p className="text-lg md:text-xl font-time-newroman italic max-w-2xl mx-auto text-slate-600 mb-10">Tấm bằng Xuất sắc này là điểm kết thúc của một hành trình và là khởi đầu cho vô vàn phi vụ mới của unhii.</p>
+              
+              {/* Nếu showWishForm đang là false (chưa click), thì hiện cái nút này */}
+              {!showWishForm && (
+                <button 
+                  onClick={() => setShowWishForm(true)} 
+                  className="px-8 py-4 md:px-10 bg-pink-500 text-white rounded-full hover:bg-pink-600 hover:scale-105 transition-all font-bold shadow-lg animate-bounce"
+                >
+                  GỬI LỜI CHÚC MỪNG 🎓
+                </button>
+              )}
             </section>
 
-          </div>
-          
+          </div> {/* Đóng thẻ div bọc các hộp nội dung */}
+
+          {/* Nếu showWishForm là true (đã click), thì render Form ra ở đây kèm hiệu ứng hiện ra từ từ */}
+          {showWishForm && (
+            <div className="relative z-30 px-4 md:px-8 max-w-6xl mx-auto mt-10 animate-fade-in">
+              <WishForm />
+            </div>
+          )}
+
           {/* FOOTER */}
           <footer className="mt-20 py-10 border-t border-pink-200 text-center text-slate-400 text-xs tracking-[0.2em] uppercase bg-white/50 px-4 relative z-30">
             <p>© 2026 Graduation Ceremony</p>

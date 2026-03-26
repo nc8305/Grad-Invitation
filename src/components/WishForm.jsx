@@ -51,19 +51,19 @@ const WishForm = () => {
         {/* Lớp mờ trang trí */}
         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-pink-300 via-pink-400 to-pink-300"></div>
 
-        <h3 className="font-playfair text-3xl md:text-4xl text-pink-600 font-bold mb-2 text-center">Gửi Lời Chúc</h3>
-        <p className="text-slate-500 text-center mb-8 italic">Hãy để lại vài dòng yêu thương cho hành trình mới của Uyên Nhi nhé!</p>
+        <h3 className="font-great-vibes text-3xl md:text-4xl text-pink-600 font-bold mb-2 text-center">Gửi Lời Chúc</h3>
+        <p className="text-slate-500 text-center mb-8 italic">Hãy để lại vài dòng yêu thương cho hành trình mới của unhii nhé!</p>
 
         {isSuccess ? (
           <div className="bg-pink-50 border border-pink-200 text-pink-700 px-6 py-8 rounded-2xl text-center animate-fade-in">
             <p className="text-2xl mb-2">✨</p>
             <p className="font-semibold text-lg">Cảm ơn bạn rất nhiều!</p>
-            <p className="text-sm mt-1">Lời chúc đã được gửi đến Uyên Nhi.</p>
+            <p className="text-sm mt-1">Lời chúc đã được gửi đến unhii.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-pink-800 mb-1 ml-1">Họ và Tên của bạn</label>
+              <label htmlFor="name" className="block text-sm font-medium text-pink-800 mb-1 ml-1">unhii có thể gọi bạn là ....</label>
               <input
                 type="text"
                 id="name"
@@ -76,7 +76,7 @@ const WishForm = () => {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-pink-800 mb-1 ml-1">Lời chúc</label>
+              <label htmlFor="message" className="block text-sm font-medium text-pink-800 mb-1 ml-1">lời chúc iu thưn</label>
               <textarea
                 id="message"
                 value={message}
