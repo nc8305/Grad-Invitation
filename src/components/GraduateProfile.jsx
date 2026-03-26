@@ -49,9 +49,9 @@ const GraduateProfile = () => {
         <h3 className="text-7xl md:text-[70px] font-playfair text-pink-600 text-glow-pink mx-auto">Trần Nguyễn Uyên Nhi</h3>
         
         {/* text-lg md:text-3xl: Tăng kích thước danh hiệu trên PC. font-serif: stack. tracking-[0.2em]: stack. uppercase: stack stack. mx-auto: stack stack. */}
-        <p className="text-xl md:text-3xl font-serif font-semibold tracking-[0.2em] text-pink-500 uppercase mx-auto">
+        {/* <p className="text-xl md:text-3xl font-serif font-semibold tracking-[0.2em] text-pink-500 uppercase mx-auto">
           Graduate with Excellence
-        </p>
+        </p> */}
       </div>
 
       {/* 3. KHỐI ẢNH TẤM BẰNG HOÀNG GIA KHỔNG LỒ (CHÍNH GIỮA) */}
