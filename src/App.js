@@ -105,7 +105,7 @@ function App() {
             {/* HỘP 6: LỜI KẾT */}
             <section className="bg-white/80 backdrop-blur-md rounded-[40px] shadow-xl p-10 md:p-16 text-center border border-pink-100" data-aos="zoom-out">
               <h2 className="font-great-vibes text-5xl md:text-7xl mb-6 text-pink-600 drop-shadow-sm text-center">Thank you for attending</h2>
-              <p className="text-lg md:text-xl font-time-newroman italic max-w-2xl mx-auto text-slate-600 mb-10">Tấm bằng Xuất sắc này là điểm kết thúc của một hành trình và là khởi đầu cho vô vàn phi vụ mới của Uyên Nhi.</p>
+              {/* <p className="text-lg md:text-xl font-time-newroman italic max-w-2xl mx-auto text-slate-600 mb-10">Tấm bằng Xuất sắc này là điểm kết thúc của một hành trình và là khởi đầu cho vô vàn phi vụ mới của Uyên Nhi.</p> */}
               {/* <button className="px-8 py-4 md:px-10 bg-pink-500 text-white rounded-full hover:bg-pink-600 hover:scale-105 transition-all font-bold shadow-lg">
                 GỬI LỜI CHÚC MỪNG 🎓
               </button> */}
