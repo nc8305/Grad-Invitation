@@ -9,6 +9,8 @@ module.exports = {
       fontFamily: {
         'great-vibes': ['"Great Vibes"', 'cursive'],
         'montserrat': ['"Montserrat"', 'sans-serif'],  
+        'pacifico': ['"Pacifico"', 'cursive'],
+        'playfair': ['"Playfair Display"', 'serif'],
       },
       colors: {
         'rose': {
