@@ -33,9 +33,6 @@ const WishForm = () => {
       setName('');
       setMessage('');
       
-      // Reset thông báo sau 5 giây
-     
-      
     } catch (error) {
       console.error('Lỗi khi gửi lời chúc:', error.message);
       alert("Có lỗi xảy ra, bạn thử lại sau nhé!");
@@ -46,10 +43,13 @@ const WishForm = () => {
 
   return (
     <div className="max-w-2xl mx-auto w-full">
-      <div className="bg-white/80 backdrop-blur-md rounded-[30px] p-8 md:p-12 shadow-xl border border-pink-100 relative overflow-hidden">
+      {/* 🌟 THAY ĐỔI Ở ĐÂY:
+          Sửa 'border border-pink-100' thành 'border-2 border-pink-200' 
+          để viền hồng hiện rõ ở cả 4 cạnh. */}
+      <div className="bg-white/80 backdrop-blur-md rounded-[30px] p-8 md:p-12 shadow-xl border-8 border-pink-400 relative overflow-hidden">
         
-        {/* Lớp mờ trang trí */}
-        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-pink-300 via-pink-400 to-pink-300"></div>
+        {/* 🌟 ĐÃ XÓA LỚP MỜ TRANG TRÍ CHỈ NẰM Ở TRÊN CẠNH ĐỈNH */}
+        {/* <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-pink-300 via-pink-400 to-pink-300"></div> */}
 
         <h3 className="font-great-vibes text-3xl md:text-4xl text-pink-600 font-bold mb-2 text-center">Gửi Lời Chúc</h3>
         <p className="text-slate-500 text-center mb-8 italic">Hãy để lại vài dòng yêu thương cho hành trình mới của unhii nhé!</p>

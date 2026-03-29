@@ -41,17 +41,23 @@ const GraduateProfile = () => {
             alt="Tấm bằng Grad with Excellence" 
             className="w-full h-auto object-contain rounded-[35px] border-4 border-white shadow-inner relative z-10 bg-white mx-auto"
           />
+        
+
+        </div>
+       <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-30 flex justify-center w-full">
+          <span className="bg-white text-pink-600 border border-pink-200 px-5 py-1.5 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-bold shadow-md animate-pulse whitespace-nowrap tracking-wide">
+            🎓 GRADUATED WITH EXCELLENCE
+          </span>
         </div>
       </div>
+      
       {/* 2. KHỐI TÊN VÀ DANH HIỆU (Ở TRÊN CÙNG) */}
-      <div className="space-y-4 md:space-y-6 z-10 w-full">
+      <div className="space-y-4 md:space-y-6 z-10 w-full -mt-10 md:-mt-16">
         {/* text-5xl md:text-[80px]: Giữ nguyên stack to lả lướt. mx-auto: stack stack. */}
-        <h3 className="text-7xl md:text-[70px] font-playfair text-pink-600 text-glow-pink mx-auto">Trần Nguyễn Uyên Nhi</h3>
+        <h3 className="text-9xl md:text-[90px] font-fzbonestay text-pink-600 text-glow-pink mx-auto">Trần Nguyễn Uyên Nhi</h3>
         
         {/* text-lg md:text-3xl: Tăng kích thước danh hiệu trên PC. font-serif: stack. tracking-[0.2em]: stack. uppercase: stack stack. mx-auto: stack stack. */}
-        {/* <p className="text-xl md:text-3xl font-serif font-semibold tracking-[0.2em] text-pink-500 uppercase mx-auto">
-          Graduate with Excellence
-        </p> */}
+      
       </div>
 
       {/* 3. KHỐI ẢNH TẤM BẰNG HOÀNG GIA KHỔNG LỒ (CHÍNH GIỮA) */}
@@ -63,9 +69,9 @@ const GraduateProfile = () => {
        
         
         {/* Đoạn Quote - Chuyển sang màu hồng Pastel đậm (high contrast) để dễ đọc nhưng không bị đen. max-w-4xl mx-auto: stack stack stack stack stack. */}
-        <p className="max-w-4xl text-lg font-montserrat md:text-2xl italic leading-relaxed mx-auto">
+        <p className="max-w-5xl text-lg font-montserrat md:text-1xl italic leading-relaxed mx-auto">
           "Thành công không phải là đích đến, mà là cả một hành trình nỗ lực không ngừng nghỉ. 
-          Tấm bằng Xuất sắc này là món quà unhii muốn dành tặng cho những người thân yêu nhất."
+          Tấm bằng xuất sắc này là món quà unhii muốn dành tặng cho những người thân yêu nhất."
         </p>
       </div>
 

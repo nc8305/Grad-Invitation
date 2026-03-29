@@ -106,7 +106,7 @@ function App() {
             {/* HỘP 6: LỜI KẾT */}
             <section className="bg-white/80 backdrop-blur-md rounded-[40px] shadow-xl p-10 md:p-16 text-center border border-pink-100" data-aos="zoom-out">
               <h2 className="font-great-vibes text-5xl md:text-7xl mb-6 text-pink-600 drop-shadow-sm text-center">Among the stars</h2>
-              <p className="text-lg md:text-xl font-time-newroman italic max-w-2xl mx-auto text-slate-600 mb-10">Tấm bằng Xuất sắc này là điểm kết thúc của một hành trình và là khởi đầu cho vô vàn phi vụ mới của unhii.</p>
+              {/* <p className="text-lg md:text-xl font-time-newroman italic max-w-2xl mx-auto text-slate-600 mb-10">Tấm bằng Xuất sắc này là điểm kết thúc của một hành trình và là khởi đầu cho vô vàn phi vụ mới của unhii.</p> */}
               
               {/* Nếu showWishForm đang là false (chưa click), thì hiện cái nút này */}
               {!showWishForm && (

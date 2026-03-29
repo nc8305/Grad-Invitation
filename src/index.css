@@ -7,6 +7,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 /* Font chữ nghệ thuật dùng cho tên Nhi */
+@font-face {
+  font-family: 'MyFabulousFont'; /* Tên bạn tự đặt cho dễ nhớ */
+  src: url('./fonts/Fabulous\ Sunday\ .otf') format('truetype'); /* Trỏ đúng tên file bạn vừa copy vào */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'amarilo'; /* Tên bạn tự đặt cho dễ nhớ */
+  src: url('./fonts/Amarillo.ttf') format('truetype'); /* Trỏ đúng tên file bạn vừa copy vào */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'betterlett'; /* Tên bạn tự đặt cho dễ nhớ */
+  src: url('./fonts/Betterlett.ttf') format('truetype'); /* Trỏ đúng tên file bạn vừa copy vào */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'fzbonestay'; /* Tên bạn tự đặt cho dễ nhớ */
+  src: url('./fonts/Fz\ Bonestay.otf') format('truetype'); /* Trỏ đúng tên file bạn vừa copy vào */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'fzbmile'; /* Tên bạn tự đặt cho dễ nhớ */
+  src: url('./fonts/Fz\ Miles.otf') format('truetype'); /* Trỏ đúng tên file bạn vừa copy vào */
+  font-weight: normal;
+  font-style: normal;
+}
 .font-great-vibes {
   font-family: 'Great Vibes', cursive;
 }

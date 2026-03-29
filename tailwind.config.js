@@ -11,6 +11,11 @@ module.exports = {
         'montserrat': ['"Montserrat"', 'sans-serif'],  
         'pacifico': ['"Pacifico"', 'cursive'],
         'playfair': ['"Playfair Display"', 'serif'],
+        'fabulous': ['"MyFabulousFont"', 'cursive'],
+        'amarilo': ['"Amarillo"', 'cursive'],
+        'betterletters': ['"Better Letters"', 'cursive'],
+        'fzbonestay' : ['"FZBonestay"', 'cursive'],
+        'fzmile' : ['"FZ Mile"', 'cursive'],
       },
       colors: {
         'rose': {
