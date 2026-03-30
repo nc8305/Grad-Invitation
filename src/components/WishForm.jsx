@@ -19,11 +19,11 @@ const WishForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Gọi API insert vào bảng 'wishes' của Supabase
+      const vnTime = new Date().toLocaleString("sv-SE", { timeZone: "Asia/Ho_Chi_Minh" });
       const { error } = await supabase
         .from('Congratulation') // Tên bảng trong Supabase
         .insert([
-          { Name: name.trim(), Congratulations: message.trim() }
+          { Name: name.trim(), Congratulations: message.trim(),created_at: vnTime}
         ]);
 
       if (error) throw error;
