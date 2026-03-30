@@ -45,7 +45,7 @@ const GraduateProfile = () => {
 
         </div>
        <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-30 flex justify-center w-full">
-          <span className="bg-white text-pink-600 font-betterletters border border-pink-200 px-5 py-1.5 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-bold shadow-md animate-pulse whitespace-nowrap tracking-wide">
+          <span className="bg-white text-pink-600  border border-pink-200 px-5 py-1.5 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-bold shadow-md animate-pulse whitespace-nowrap tracking-wide">
             🎓 GRADUATED WITH EXCELLENCE
           </span>
         </div>
