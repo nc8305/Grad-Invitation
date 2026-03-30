@@ -8,7 +8,7 @@ const EventDetail = () => {
       time: "15:30 - 16:30",
       location: "Hồ Con Rùa",
       address: "Vòng xoay Phạm Ngọc Thạch, Phường 6, Quận 3, TP.HCM",
-      note: "Giờ này ánh sáng hoàng hôn để chụp ảnh là đỉnh cao luôn nha! ✨",
+      note: "Giờ này ánh sáng để chụp ảnh là đỉnh cao luôn nha! ✨",
       mapLink: "https://maps.app.goo.gl/sNQ9mRfWRMjt4X2k6" // Bạn có thể thay link Google Maps thật của Hồ Con Rùa vào đây
     }
   ];

@@ -24,7 +24,7 @@ const GraduateProfile = () => {
         <FaMusic className="absolute top-20 right-1/4 text-5xl text-pink-Stack300 animate-float-slow" />
         <FaMusic className="absolute bottom-20 left-1/4 text-4xl text-pink-300 animate-float-delayed" />
       </div>
- <div className="flex-shrink-0 z-10 relative pointer-events-none mx-auto w-full max-w-[360px] md:max-w-[800px] mb-10">
+ <div className="flex-shrink-0 z-10 relative pointer-events-none mx-auto w-full max-w-[360px] md:max-w-[800px] mb-2">
         {/* Giữ nguyên Khung ảnh hoàng gia vàng khổng lồ bao trùm lấy tấm bằng, to đủ để stack stack stack. */}
         <div className="w-full h-auto rounded-[50px] p-3 bg-gradient-to-tr from-yellow-300 via-white to-yellow-100 shadow-[0_0_80px_rgba(255,215,0,0.7)] group-hover:scale-105 transition-all duration-500 overflow-hidden relative">
           
@@ -45,7 +45,7 @@ const GraduateProfile = () => {
 
         </div>
        <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-30 flex justify-center w-full">
-          <span className="bg-white text-pink-600 border border-pink-200 px-5 py-1.5 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-bold shadow-md animate-pulse whitespace-nowrap tracking-wide">
+          <span className="bg-white text-pink-600 font-betterletters border border-pink-200 px-5 py-1.5 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-bold shadow-md animate-pulse whitespace-nowrap tracking-wide">
             🎓 GRADUATED WITH EXCELLENCE
           </span>
         </div>
@@ -54,7 +54,7 @@ const GraduateProfile = () => {
       {/* 2. KHỐI TÊN VÀ DANH HIỆU (Ở TRÊN CÙNG) */}
       <div className="space-y-4 md:space-y-6 z-10 w-full -mt-10 md:-mt-16">
         {/* text-5xl md:text-[80px]: Giữ nguyên stack to lả lướt. mx-auto: stack stack. */}
-        <h3 className="text-9xl md:text-[90px] font-fzbonestay text-pink-600 text-glow-pink mx-auto">Trần Nguyễn Uyên Nhi</h3>
+        {/* <h3 className="text-9xl md:text-[90px] font-fzbonestay text-pink-600 text-glow-pink mx-auto">Trần Nguyễn Uyên Nhi</h3> */}
         
         {/* text-lg md:text-3xl: Tăng kích thước danh hiệu trên PC. font-serif: stack. tracking-[0.2em]: stack. uppercase: stack stack. mx-auto: stack stack. */}
       
@@ -65,11 +65,11 @@ const GraduateProfile = () => {
      
 
       {/* 4. KHỐI QUOTE VÀ DIVIDER (Ở DƯỚI CÙNG) */}
-      <div className="w-full space-y-12 z-10">
+      <div className="w-full space-y-10 z-10 -mt-8">
        
         
         {/* Đoạn Quote - Chuyển sang màu hồng Pastel đậm (high contrast) để dễ đọc nhưng không bị đen. max-w-4xl mx-auto: stack stack stack stack stack. */}
-        <p className="max-w-5xl text-lg font-montserrat md:text-1xl italic leading-relaxed mx-auto">
+        <p className="max-w-5xl text-lg font-montserrat md:text-lg italic leading-relaxed mx-auto">
           "Thành công không phải là đích đến, mà là cả một hành trình nỗ lực không ngừng nghỉ. 
           Tấm bằng xuất sắc này là món quà unhii muốn dành tặng cho những người thân yêu nhất."
         </p>
